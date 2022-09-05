@@ -6,22 +6,22 @@ const todoApi = {
     return axiosClient.get(url, { params });
   },
 
-  getCards: (id) => {
+  getTask: (id) => {
     const url = "/todo" + id;
     return axiosClient.get(url);
   },
 
-  plusCard: (data) => {
+  plusTask: (data) => {
     const url = "/todo/";
     return axiosClient.post(url, data);
   },
 
-  updateCard(data) {
+  updateTask(data) {
     const url = `/todo/${data.id}`;
-    return axiosClient.patch(url, data);
+    return axiosClient.put(url, data);
   },
 
-  removeCard(id) {
+  removeTask(id) {
     const url = `/todo/${id}`;
     return axiosClient.delete(url);
   },

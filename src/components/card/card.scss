@@ -1,0 +1,43 @@
+@use "../../scss/" as *;
+
+.card {
+  cursor: pointer;
+  overflow-wrap: break-word;
+  position: relative;
+  hyphens: auto;
+  padding: 20px;
+  background-color: #212121;
+  border-radius: $border-radius;
+  transition: all ease-in-out 0.3s;
+
+  &__features {
+    position: absolute;
+    display: inline-flex;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    .btn__edit,
+    .btn__delete {
+      display: inline-block;
+      color: $txt-color;
+      font-size: 1rem;
+      border: none;
+      border-radius: $border-radius;
+      padding: 5px 10px;
+      background-color: $main-color;
+      margin: 0 5px;
+    }
+  }
+
+  @media (hover: hover) {
+    &:hover::before {
+      opacity: 0.8;
+    }
+
+    &:hover &__features {
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+}
